@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# TALKtoME - Your personal Mentor, Friend and Conversation Partner.
+
+**My new project which will motivate you anytime.**
+
+Vanilla project find [Repo](https://github.com/muradr777/talktome_pb) and [GH-Pages](https://muradr777.github.io/talktome_pb/).
+
+## Last changes 
+  - Finished basic animation by click
+  - Full functionality not ready yet, but working on it.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

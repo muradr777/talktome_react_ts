@@ -1,6 +1,6 @@
-export default function Form() {
+export default function Form({ onSubmit }: any) {
   return (
-    <form id="mindForm">
+    <form id="mindForm" onSubmit={onSubmit}>
       <div className="form-group">
         <label
           className="lang-text"

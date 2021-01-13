@@ -28,5 +28,21 @@
 
 
 .wrapper
+    &:before
+        display: none
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        position: absolute
+        content: 'Sorry... Landscape mode is currently unavailable. Please rotate your device.'
     @include mq(xs)
         padding: 5rem 10px
+
+
+@media screen and (max-width: 992px) and (orientation:landscape)
+    main.wrapper *
+        display: none
+    main.wrapper:before
+        display: block
+
+

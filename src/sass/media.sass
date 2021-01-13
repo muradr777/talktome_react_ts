@@ -2,7 +2,10 @@
 
 // Works with Bootstrap's screen sizes
 @mixin mq($class)
-  @if $class == xs
+  @if $class == xxs
+    @media (max-width: 374px)
+      @content
+  @else if $class == xs
     @media (max-width: 575px)
       @content
 

@@ -2,18 +2,24 @@
     opacity: 0
     top: 25%
     left: 50%
+    overflow-y: auto
+    max-height: 135px
     font-size: 24px
     font-weight: 700
     position: absolute
+    text-align: center
     transform: translate(-50%, -50%)
     transition: opacity 2s ease-in-out
+
     @include mq(xs)
         top: 18%
         width: 100%
         padding: 0 10px
         font-size: 18px
         text-align: center
-    &.shown
+    @include mqMax(344)
+        top: 25%
+    &.active
         opacity: 1
     span
         letter-spacing: 2px

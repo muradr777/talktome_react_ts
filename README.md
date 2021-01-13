@@ -2,11 +2,17 @@
 
 **My new project which will motivate you anytime.**
 
-Vanilla project find [Repo](https://github.com/muradr777/talktome_pb) and [GH-Pages](https://muradr777.github.io/talktome_pb/).
+## Tech
+- Currently using `React` and `Typescript`
+
+VanillaJS project find [Repo](https://github.com/muradr777/talktome_pb) and [GH-Pages](https://muradr777.github.io/talktome_pb/).
 
 ## Last changes 
   - Finished basic animation by click
+
+## Todo
   - Full functionality not ready yet, but working on it.
+  - Tests also not ready yet
 
 ## Getting Started with Create React App
 

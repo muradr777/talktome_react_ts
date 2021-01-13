@@ -5,7 +5,7 @@
 ## Tech
 - Currently using `React` and `Typescript`
 
-VanillaJS project find [Repo](https://github.com/muradr777/talktome_pb) and [GH-Pages](https://muradr777.github.io/talktome_pb/).
+VanillaJS project find there: [Repo](https://github.com/muradr777/talktome_pb) and [GH-Pages](https://muradr777.github.io/talktome_pb/).
 
 ## Last changes 
   - Finished basic animation by click

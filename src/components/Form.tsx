@@ -10,6 +10,7 @@ export default function Form({ onSubmit }: any) {
           What're you thinking about?
         </label>
         <div className="input-wrap">
+          {/** TODO: // ! BUG: On focus, CSS showing "Landscape error." */}
           <input
             id="message"
             name="message"

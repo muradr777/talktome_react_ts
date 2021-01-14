@@ -50,7 +50,7 @@
     &.error
         color: #e34c44
 
-.active
+.form-wrap.active
     transform: translateY(70%)
 
 .alert
@@ -83,6 +83,7 @@
     display: flex
     justify-content: center
     .motivate-btn
+        z-index: 2
         outline: none
         opacity: 0.78
         color: #fafafa
@@ -92,5 +93,57 @@
         transition: opacity .6s
         background-color: #ea5a52
         border: 1px solid transparent
-        &:hover
+        &.hidden
+            opacity: 0
+        &:not(.hidden):hover
             opacity: 1
+
+.loading
+    opacity: 0
+    padding: 1.5rem 0
+    transition: opacity .6s ease-in-out
+    &.active
+        opacity: 1
+
+.gooey
+  position: absolute
+  opacity: 0.3
+  top: 50%
+  left: 50%
+  width: 142px
+  height: 40px
+  margin: -20px 0 0 -71px
+  background: white
+  filter: contrast(20)
+  .dot
+    position: absolute
+    width: 16px
+    height: 16px
+    top: 12px
+    left: 15px
+    filter: blur(4px)
+    background: #444
+    border-radius: 50%
+    transform: translateX(0)
+    animation: dot 2.8s infinite
+  .dots
+    transform: translateX(0)
+    margin-top: 12px
+    margin-left: 31px
+    animation: dots 2.8s infinite
+    span
+      display: block
+      float: left
+      width: 16px
+      height: 16px
+      margin-left: 16px
+      filter: blur(4px)
+      background: #444
+      border-radius: 50%
+
+@keyframes dot
+  50%
+    transform: translateX(96px)
+@keyframes dots
+  50%
+    transform: translateX(-31px)

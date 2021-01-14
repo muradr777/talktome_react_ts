@@ -7,23 +7,22 @@ import Answer from "./components/Answer";
 import ControlBtn from "./components/ControlBtn";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Form from "./components/Form";
 import Player from "./components/Player";
 import UseHeadphones from "./components/UseHeadphones";
 
 export default function App() {
-  const [typing, setTyping] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [playing, setPlaying] = useState<boolean>(false);
   const [formPosition, setFormPosition] = useState<boolean>(false);
 
-  function changeTypingStatus(typing: boolean) {
-    if (!typing) {
-      setTyping(!typing);
-    }
+  function disableMotivateBtn(loading: boolean) {}
+
+  function getClassMotivate(loading: boolean) {
+    return loading ? "motivate-btn hidden" : "motivate-btn";
   }
 
-  function getClassMainWrap(typing: boolean) {
-    return typing ? "wrapper typing" : "wrapper";
+  function getClassLoading(loading: boolean) {
+    return loading ? "loading active" : "loading";
   }
 
   function setPlayerStatus(status: boolean) {
@@ -32,8 +31,8 @@ export default function App() {
 
   // function moveForm(e: any, position: boolean) {
   function moveForm(position: boolean) {
-    // e.preventDefault();
     setFormPosition(!position);
+    setLoading(!loading);
   }
 
   function getClassFormWrap(active: boolean) {
@@ -44,7 +43,7 @@ export default function App() {
     <div className="App">
       <Header />
       {/* TODO: Show landscape error. */}
-      <main className={getClassMainWrap(typing)}>
+      <main className="wrapper">
         {/* TODO: Make dinamic */}
         <Answer
           toggle={formPosition}
@@ -52,19 +51,28 @@ export default function App() {
         />
         {/* TODO: Make dinamic */}
         <div className={getClassFormWrap(formPosition)}>
-          {/* <Form
-            handleFocus={() => changeTypingStatus(typing)}
-            onSubmit={(e: any) => moveForm(e, formPosition)}
-          /> */}
           <div className="motivate-wrap">
             <button
               id="#motivate"
               onClick={() => moveForm(formPosition)}
               type="button"
-              className="motivate-btn"
+              className={getClassMotivate(loading)}
             >
               Motivate Me
             </button>
+            <div className={getClassLoading(loading)}>
+              <div className="gooey">
+                <span className="credits" hidden>
+                  Credit: https://dribbble.com/shots/5092176-Newton-Loader
+                </span>
+                <span className="dot"></span>
+                <div className="dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <ControlBtn

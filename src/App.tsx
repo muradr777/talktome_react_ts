@@ -31,8 +31,8 @@ export default function App() {
   }
 
   // function moveForm(e: any, position: boolean) {
-  function moveForm(position: boolean) {
-    // e.preventDefault();
+  function moveForm(e: any, position: boolean) {
+    e.preventDefault();
     setFormPosition(!position);
   }
 
@@ -52,20 +52,10 @@ export default function App() {
         />
         {/* TODO: Make dinamic */}
         <div className={getClassFormWrap(formPosition)}>
-          {/* <Form
+          <Form
             handleFocus={() => changeTypingStatus(typing)}
             onSubmit={(e: any) => moveForm(e, formPosition)}
-          /> */}
-          <div className="motivate-wrap">
-            <button
-              id="#motivate"
-              onClick={() => moveForm(formPosition)}
-              type="button"
-              className="motivate-btn"
-            >
-              Motivate Me
-            </button>
-          </div>
+          />
 
           <ControlBtn
             handleClick={() => setPlayerStatus(playing)}

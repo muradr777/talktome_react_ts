@@ -9,25 +9,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Player from "./components/Player";
 import UseHeadphones from "./components/UseHeadphones";
+import MotivateBtn from "./components/MotivateBtn";
+import Preloader from "./components/Preloader";
 
 export default function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [playing, setPlaying] = useState<boolean>(false);
   const [formPosition, setFormPosition] = useState<boolean>(false);
-
-  function disableMotivateBtn(loading: boolean) {}
-
-  function getClassMotivate(loading: boolean) {
-    return loading ? "motivate-btn hidden" : "motivate-btn";
-  }
-
-  function getClassLoading(loading: boolean) {
-    return loading ? "loading active" : "loading";
-  }
-
-  function setPlayerStatus(status: boolean) {
-    setPlaying(!status);
-  }
 
   // function moveForm(e: any, position: boolean) {
   function moveForm(position: boolean) {
@@ -42,7 +30,6 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      {/* TODO: Show landscape error. */}
       <main className="wrapper">
         {/* TODO: Make dinamic */}
         <Answer
@@ -52,36 +39,20 @@ export default function App() {
         {/* TODO: Make dinamic */}
         <div className={getClassFormWrap(formPosition)}>
           <div className="motivate-wrap">
-            <button
-              id="#motivate"
-              onClick={() => moveForm(formPosition)}
-              type="button"
-              className={getClassMotivate(loading)}
-            >
-              Motivate Me
-            </button>
-            <div className={getClassLoading(loading)}>
-              <div className="gooey">
-                <span className="credits" hidden>
-                  Credit: https://dribbble.com/shots/5092176-Newton-Loader
-                </span>
-                <span className="dot"></span>
-                <div className="dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
+            <MotivateBtn
+              handleClick={() => moveForm(formPosition)}
+              loading={loading}
+            />
+            <Preloader loading={loading} />
           </div>
 
           <ControlBtn
-            handleClick={() => setPlayerStatus(playing)}
+            handleClick={() => setPlaying(!playing)}
             buttonId="mute"
             status={playing}
           />
           <ControlBtn
-            handleClick={() => setPlayerStatus(playing)}
+            handleClick={() => setPlaying(!playing)}
             buttonId="play"
             status={!playing}
           />

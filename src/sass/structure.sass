@@ -40,9 +40,10 @@
 
 
 @media screen and (max-width: 992px) and (orientation:landscape)
-    main.wrapper *
+    main.wrapper:not(.typing) *
         display: none
-    main.wrapper:before
-        display: block
+    main.wrapper:not(.typing)
+        &:before
+            display: block
 
 

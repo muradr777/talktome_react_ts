@@ -1,4 +1,4 @@
-export default function Form({ onSubmit }: any) {
+export default function Form({ handleFocus, onSubmit }: any) {
   return (
     <form id="mindForm" onSubmit={onSubmit}>
       <div className="form-group">
@@ -17,6 +17,8 @@ export default function Form({ onSubmit }: any) {
             type="text"
             placeholder="Type your message here..."
             autoComplete="off"
+            onBlur={handleFocus}
+            onFocus={handleFocus}
           />
           <button className="submit-btn">
             <i className="fas fa-arrow-right"></i>

@@ -1,11 +1,11 @@
 .form-wrap
     width: 500px
     position: relative
-    background-color: #fafafa
+    // background-color: #fafafa
     padding: 2.2rem 2rem 1.8rem
     margin: 20vh auto
     border-radius: 3px
-    border: 1px solid #ddd
+    // border: 1px solid #ddd
     transition: border-color .3s ease-in-out, transform 2s
     @include mq(xs)
         width: 100%
@@ -78,3 +78,19 @@
     color: #c4c4c4
     font-size: 12px
     position: absolute
+
+.motivate-wrap
+    display: flex
+    justify-content: center
+    .motivate-btn
+        outline: none
+        opacity: 0.78
+        color: #fafafa
+        font-size: 1.5rem
+        border-radius: 2rem
+        padding: 10px 22px
+        transition: opacity .6s
+        background-color: #ea5a52
+        border: 1px solid transparent
+        &:hover
+            opacity: 1

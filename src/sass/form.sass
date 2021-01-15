@@ -52,6 +52,10 @@
 
 .form-wrap.active
     transform: translateY(70%)
+    @include mq(xs)
+        transform: translateY(150%)
+    @include mqMax(344)
+        transform: translateY(110%)
 
 .alert
     opacity: 0

@@ -17,7 +17,6 @@ export default function Player({ playerState }: any) {
   };
 
   useEffect(() => {
-    console.log(player, playerState);
     if (player !== null) {
       if (playerState) {
         player.playVideo();
@@ -26,7 +25,7 @@ export default function Player({ playerState }: any) {
         player.mute();
       }
     }
-  }, [playerState]);
+  }, [player, playerState]);
 
   return <Youtube videoId="L786lbUnZIY" opts={opts} onReady={onReady} />;
 }

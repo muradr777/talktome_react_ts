@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="Footer">
       <div className="copyrights">
-        <span>Murad Rustamov © 2020</span>
+        <span>Murad Rustamov © 2021</span>
       </div>
       {langsVisibility ? <LangsOverlay /> : ""}
     </footer>

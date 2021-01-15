@@ -1,6 +1,8 @@
 import Youtube from "react-youtube";
 import { useState, useEffect } from "react";
 
+// TODO: Music don't work on Iphones
+
 export default function Player({ playerState }: any) {
   const [opts] = useState<Object>({
     height: "390",
@@ -27,5 +29,9 @@ export default function Player({ playerState }: any) {
     }
   }, [player, playerState]);
 
-  return <Youtube videoId="L786lbUnZIY" opts={opts} onReady={onReady} />;
+  return (
+    <div className="player-wrap">
+      <Youtube videoId="L786lbUnZIY" opts={opts} onReady={onReady} />
+    </div>
+  );
 }

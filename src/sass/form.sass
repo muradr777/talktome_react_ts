@@ -53,9 +53,7 @@
 .form-wrap.active
     transform: translateY(70%)
     @include mq(xs)
-        transform: translateY(150%)
-    @include mqMax(344)
-        transform: translateY(110%)
+        transform: translateY(30%)
 
 .alert
     opacity: 0
@@ -74,14 +72,13 @@
         transform: translateY(0)
 
 .user-headset
-    left: 50%
     width: 100%
-    bottom: -20%
+    padding: 1rem 0 2rem
     text-align: center
-    transform: translate(-50%, -50%)
     color: #c4c4c4
     font-size: 1rem
-    position: absolute
+    display: flex
+    justify-content: center
     @include mq(xxs)
         font-size: 12px
 
@@ -115,13 +112,15 @@
 .gooey
   position: absolute
   opacity: 0.3
-  top: 50%
+  top: 25%
   left: 50%
   width: 142px
   height: 40px
   margin: -20px 0 0 -71px
   background: white
   filter: contrast(20)
+  @include mq(xs)
+    top: 14%
   .dot
     position: absolute
     width: 16px

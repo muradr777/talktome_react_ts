@@ -1,21 +1,26 @@
-.controlWrap
+.control-wrap
+    position: relative
+    padding: 2rem 0
+.controlBtn
+    top: 50%
     left: 50%
+    position: absolute
+    transform: translateX(-50%)
     opacity: 0
-    bottom: -85%
+    display: flex
+    justify-content: center
     border: none
     color: #c4c4c4
     font-size: 32px
     background-color: transparent
-    
-    position: absolute
     transition: color .6s, transform 1s, opacity 1s
     &:hover, &:focus
         outline: none
         color: #414141
     &.mLeft
-        transform: translateX(-200%) translateY(-50%)
+        transform: translateX(-200%)
     &.mRight
-        transform: translateX(150%) translateY(-50%)
+        transform: translateX(200%)
     &.active
         opacity: 1
-        transform: translate(-50%, -50%)
+        transform: translateX(-50%)

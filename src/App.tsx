@@ -69,7 +69,7 @@ export default function App() {
         "Так что главное – сделать это лучше. ",
       ],
       [
-        "Ты не можешь ни выйграть, ни проиграть до тех пор,",
+        "Ты не можешь ни выиграть, ни проиграть до тех пор,",
         "пока ты не участвуешь в гонках.",
       ],
       ["На любые события в своей жизни смотри оптимистично."],
@@ -216,23 +216,25 @@ export default function App() {
             </LangContext.Provider>
             <Preloader loading={showAnswer} />
           </div>
+          <div className="control-wrap">
+            <ControlBtn
+              handleClick={() => {
+                setPlayingState(!playing);
+                setMuted(!muted);
+              }}
+              buttonId="mute"
+              status={playing}
+            />
+            <ControlBtn
+              handleClick={() => {
+                setPlayingState(!playing);
+                setMuted(!muted);
+              }}
+              buttonId="play"
+              status={!playing}
+            />
+          </div>
 
-          <ControlBtn
-            handleClick={() => {
-              setPlayingState(!playing);
-              setMuted(!muted);
-            }}
-            buttonId="mute"
-            status={playing}
-          />
-          <ControlBtn
-            handleClick={() => {
-              setPlayingState(!playing);
-              setMuted(!muted);
-            }}
-            buttonId="play"
-            status={!playing}
-          />
           <LangContext.Provider value={{ lang, setLang }}>
             <TranslationContext.Provider
               value={{ translation, setTranslation }}
@@ -240,8 +242,8 @@ export default function App() {
               <UseHeadphones />
             </TranslationContext.Provider>
           </LangContext.Provider>
+          <Player playerState={playing} />
         </div>
-        <Player playerState={playing} />
       </main>
 
       <LangContext.Provider value={{ lang, setLang }}>

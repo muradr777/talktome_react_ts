@@ -40,19 +40,17 @@ input:focus, button:focus
     outline: 0
 
 .player-wrap
-    position: relative
-    display: flex
-    padding-bottom: 30px
-    justify-content: center
+    left: 0
+
+    width: 100%
+    position: absolute
     @include mq(xs)
-        top: 320px
+        position: relative
+        display: block
     iframe
-        margin-top: -20px
+        width: 100%
+        max-height: 300px
         @include mq(xs)
-            position: absolute
-            top: 0
-            left: 50%
-            width: 90%
-            transform: translateX(-50%)
+            width: 100%
             max-height: 200px
     

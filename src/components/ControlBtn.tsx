@@ -1,5 +1,5 @@
 export default function ControlBtn({ buttonId, handleClick, status }: any) {
-  let btnClass = "controlWrap ",
+  let btnClass = "controlBtn ",
     icoClass = "fas fa-volume-";
   if (buttonId === "mute") {
     btnClass += "mRight";
